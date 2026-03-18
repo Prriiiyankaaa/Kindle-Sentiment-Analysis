@@ -27,7 +27,7 @@ Given a large volume of customer reviews, can we accurately predict sentiment
 
 | Metric | Score |
 |--------|-------|
-| Accuracy | 88% |
+| Accuracy | 83% |
 | Evaluation | Precision, Recall, F1 (multi-metric) |
 | Dataset size | 12,000+ reviews |
 
