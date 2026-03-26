@@ -1,7 +1,6 @@
 # Kindle Product Sentiment Analysis
 
-A sentiment classification system trained on 12,000+ Amazon Kindle product reviews,
-using a Random Forest classifier with TF-IDF text features.
+A sentiment classification system trained on 10,000+ Amazon Kindle reviews using NLP and machine learning models to classify customer feedback into positive or negative.
 
 ## Problem Statement
 
@@ -11,25 +10,27 @@ Given a large volume of customer reviews, can we accurately predict sentiment
 ## Approach
 
 **Preprocessing pipeline**
-- Lowercasing, punctuation removal, stopword filtering, tokenisation
-- Categorical encoding for non-text features
+- Lowercasing, punctuation removal, and noise reduction
+- Stopword removal using NLTK
+- Lemmatization to normalize word forms
 
 **Feature engineering**
 - TF-IDF vectorisation to convert cleaned text into numerical features
 - Class imbalance handling via feature-level engineering
 
 **Model**
-- Random Forest classifier
-- Evaluated on precision, recall, and F1-score — not just accuracy — to
-  account for skewed class distribution
+- Logistic Regression
+- Hyperparameter tuning using GridSearchCV
+- Evaluation using accuracy and confusion matrix
+---
 
 ## Results
 
 | Metric | Score |
 |--------|-------|
-| Accuracy | 83% |
+| Accuracy | 90.85% |
 | Evaluation | Precision, Recall, F1 (multi-metric) |
-| Dataset size | 12,000+ reviews |
+| Dataset size | 10,000+ reviews |
 
 ## Tech Stack
 
@@ -51,5 +52,3 @@ jupyter notebook
 - Data quality and preprocessing matter as much as model choice
 - Accuracy alone is misleading under skewed class distributions —
   always evaluate with F1-score on imbalanced datasets
-- A well-tuned simple model (Random Forest + TF-IDF) can be
-  production-ready without deep learning overhead
